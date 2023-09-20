@@ -26,7 +26,9 @@ if (!empty($session->getflashdata('success'))) {
             <span class="sr-only">Check icon</span>
         </div>
 
-        <div class="ml-3 text-sm font-normal"><?= ($session->getflashdata('success')); ?></div>
+        <div class="ml-3 text-sm font-normal">
+            <?= ($session->getflashdata('success')); ?>
+        </div>
         <button type="button"
             class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
             data-dismiss-target="#toast-success" aria-label="Close">
@@ -37,7 +39,7 @@ if (!empty($session->getflashdata('success'))) {
             </svg>
         </button>
     </div>
-    </div>
+  
 
     <script>
         // Use JavaScript to remove the success message after 2 seconds
@@ -80,7 +82,7 @@ if (!empty($session->getflashdata('success'))) {
                 </tr>
             </thead>
             <tbody>
-              <?php  $id = 0; ?>
+                <?php $id = 0; ?>
                 <?php if (!empty($departmentsArray)) {
 
                     foreach ($departmentsArray as $dept) {
@@ -92,7 +94,7 @@ if (!empty($session->getflashdata('success'))) {
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <?= $id+1; ?>
+                                <?= $id + 1; ?>
                             </th>
                             <td class="px-6 py-4">
                                 <?= $dept['d_name']; ?>
@@ -101,7 +103,8 @@ if (!empty($session->getflashdata('success'))) {
                                 <?= $dept['description']; ?>
                             </td>
                             <td class="px-6 py-4">
-                                <a  href="<?= base_url('deletedepartment/'. $dept['id']);?>"  class="flex items-center cursor-pointer">
+                                <a href="<?= base_url('deletedepartment/' . $dept['id']); ?>"
+                                    class="flex items-center cursor-pointer">
                                     <div
                                         class="h-2.5 w-2.5 rounded-full <?= $dept['status'] === 'active' ? 'bg-green-500' : 'bg-red-500' ?> mr-2">
                                     </div>
@@ -109,12 +112,13 @@ if (!empty($session->getflashdata('success'))) {
                                 </a>
                             </td>
                             <td class="flex items-center px-6 py-4 space-x-3">
-                                <a href="<?= base_url('editdepartment/'. $dept['id']);?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <!-- <a href="<?= base_url('deletedepartment/'. $dept['id']);?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a> -->
+                                <a href="<?= base_url('editdepartment/' . $dept['id']); ?>"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <!-- <a href="<?= base_url('deletedepartment/' . $dept['id']); ?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a> -->
                             </td>
                         </tr>
 
-                       <?php $id++; ?>
+                        <?php $id++; ?>
                     <?php }
                 } ?>
 

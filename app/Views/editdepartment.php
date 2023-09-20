@@ -8,7 +8,7 @@
         class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">BACK</a>
 </div>
 
-<div class="pr-16 mt-14 sm:mr-8 sm:ml-80 sm:mt-14 flex justify-center items-center ">
+<div class="pr-16 mt-14 sm:mr-8 sm:ml-80 sm:mt-14 flex justify-center items-center">
     <div class="flex items-center justify-center shadow-lg px-8 py-4">
         <form class="w-full " action="<?= base_url('editdepartment'); ?>" method="post">
         <input type="hidden" name="department_id" value="<?= $department['id']; ?>">

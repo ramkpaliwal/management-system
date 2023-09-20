@@ -16,8 +16,7 @@ class Departmentmodel extends Model{
     public function getRow($id){
         return $this->where('id',$id)->first();
     }
-
-    public function toggleStatus($id) {
+     public function toggleStatus($id) {
         // Check if the department with the given ID exists
         $department = $this->find($id);
     
@@ -42,6 +41,18 @@ class Departmentmodel extends Model{
             // Handle the case where the update failed
             return false; // Indicate that the operation failed
         }
+    }
+
+
+    public function getActiveDepartments()
+    {
+        // Assuming you have a 'status' column in your departments table
+        return $this->where('status', 'active')->findAll();
+    }
+
+    public function getDepartmentNameById($id){
+        $departmentData = $this->find($id);
+        return $departmentData['d_name'];
     }
     
 }
